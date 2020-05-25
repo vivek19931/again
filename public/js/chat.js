@@ -121,6 +121,34 @@ socket.on('newMessagee', function(message) {
 });
 
 
+var file = document.getElementById('my-file');
+            
+
+
+file.addEventListener('change', function () {
+if (!file.files.length) {
+return;
+            }
+            
+              
+    
+         
+            
+
+var firstFile = file.files[0],
+reader = new FileReader();
+
+reader.onloadend = function () {
+socket.emit('upload-image', {
+name: firstFile.name,
+data: reader.result
+                });
+            };
+
+reader.readAsArrayBuffer(firstFile);
+        });
+
+
 
 
 
