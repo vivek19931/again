@@ -120,21 +120,16 @@ socket.on('newMessagee', function(message) {
   scrollToBottom();
 });
 
-
-var file = document.getElementById('my-file');
-            
-
-
-file.addEventListener('change', function () {
-if (!file.files.length) {
+document.querySelector('#file').addEventListener('change', function() {
+	
+	
+	if (!file.files.length) {
 return;
             }
             
               
-    
-         
-            
-
+          
+     
 var firstFile = file.files[0],
 reader = new FileReader();
 
@@ -147,6 +142,21 @@ data: reader.result
 
 reader.readAsArrayBuffer(firstFile);
         });
+
+  
+
+
+
+
+
+
+
+
+     
+            
+              
+          
+     
 
 
 
